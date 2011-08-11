@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Kata</title>
+    <script src="javascripts/lib/jquery.js"></script>
+    <script src="javascripts/lib/underscore.js"></script>
+    <script src="javascripts/lib/ich.js"></script>
+    <script src="javascripts/lib/lucid.events.js"></script>
+    <script src="javascripts/models/die.model.js"></script>
+    <script src="javascripts/models/roll.model.js"></script>
+    <script src="javascripts/presenters/roll.presenter.js"></script>
+    <script src="javascripts/ui/roll.ui.js"></script>
+    <script src="javascripts/ui/app.js"></script>
+    <link rel="stylesheet" href="stylesheets/dice.css" />
+  </head>
+  <body>
+    <div id="dice">
+      <div id="d1" class="space" data-roll="1"><div class="die" data-number="1">1</div></div>
+      <div id="d2" class="space" data-roll="2"><div class="die" data-number="2">2</div></div>
+      <div id="d3" class="space" data-roll="3"><div class="die" data-number="3">3</div></div>
+      <div id="d4" class="space" data-roll="4"><div class="die" data-number="4">4</div></div>
+      <div id="d5" class="space" data-roll="5"><div class="die" data-number="5">5</div></div>
+      <div class="meta">Select how many dice to roll</div>
+    </div>
+
+    <div id="results">
+      <div class="empty">Your Rolls will Display Here</div>
+    </div>
+
+    <script type="text/html" id="roll_template">
+      <div class="roll">
+        {{#dice}}
+        <div class="space">
+          {{#die}}
+          <div class="die" data-number="{{number}}">{{number}}</div>
+          {{/die}}
+        </div>
+        {{/dice}}
+        <div class="meta"><strong>{{score}}</strong> points</div>
+      </div>
+    </script>
+  </body>
+</html>
